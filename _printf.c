@@ -42,10 +42,9 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 
-	va_start(args, format);
-	int character_count = 0;
-	int x = 0;
+	int character_count = 0, x = 0;
 
+	va_start(args, format);
 	while (format[x] != '\0')
 	{
 		if (format[x] != '%')
@@ -80,18 +79,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (character_count);
-}
-/**
- * main - Test for _printf function
- *
- * Return: 0 Success
- */
-int main(void)
-{
-	int text;
-
-	text = _printf("Hello, %c World! %s %%\n", 'C', "Printf team project");
-	printf("Character count: %d\n", text);
-
-	return (0);
 }
