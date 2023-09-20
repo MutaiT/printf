@@ -41,9 +41,8 @@ void print_str(const char *str, int *char_count)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	
-	int x = 0;
-	int character_count = 0;
+	int x = 0, character_count = 0;
+
 	va_start(args, format);
 
 	while (format[x] != '\0')
