@@ -41,10 +41,10 @@ void print_str(const char *str, int *char_count)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int character_count = 0;
-	int x = 0;
 
 	va_start(args, format);
+	int character_count = 0;
+	int x = 0;
 
 	while (format[x] != '\0')
 	{
