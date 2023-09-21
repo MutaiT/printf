@@ -80,17 +80,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (character_count);
 }
-/**
- * main - Test for _printf
- *
- * Return: 0 SUCCESS
- */
-int main(void)
-{
-	int count;
-
-	count = _printf("Hello, %c World! %s %%\n", 'C', "Custom _printf");
-	printf("Character count: %d\n", count);
-
-	return (0);
-}
