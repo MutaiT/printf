@@ -80,3 +80,40 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (character_count);
 }
+/**
+ * printf_d_i - Handles d and i conversion specifiers
+ *
+ * @format: Format string
+ * @...: Variable arguments
+ *
+ * Return: Number of characters printed
+ */
+int printf_d_i(const char *format, ...)
+{
+	va_list args;
+
+	va_start(args, format);
+
+	int char_count = 0;
+
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			putchar(*format);
+			char_count++;
+		}
+		else if (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
+		{
+			int num = va_arg(args, int);
+
+			printf("%d", num);
+			char_count++;
+			format++; /* Skip the 'd' or 'i' character */
+		}
+		format++;
+	}
+	va_end(args);
+
+	return (char_count);
+}

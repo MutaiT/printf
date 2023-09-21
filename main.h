@@ -4,5 +4,6 @@
 int _printf(const char *format, ...);
 void print_str(const char *str, int *char_count);
 void print_char(char c, int *char_count);
+int printf_d_i(const char *format, ...);
 
 #endif
